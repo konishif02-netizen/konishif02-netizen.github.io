@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【氏名】 | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="./">Portfolio</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#research">Research</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <h1 class="role">【氏名】</h1>
+    <p class="affiliation">兵庫県立大学大学院 情報科学研究科 データ計算科学専攻</p>
+    <div class="links">
+      <a href="https://github.com/konishif02-netizen" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>大学院で自然言語処理と情報検索を研究しています。研究とは別に、Webアプリケーションを個人で開発・運用しています。</p>
+    <ul class="timeline">
+      <li><time>2022.04 – 2026.03</time><span>甲南大学 知能情報学部 知能情報学科</span></li>
+      <li><time>2026.04 – 現在</time><span>兵庫県立大学大学院 情報科学研究科 データ計算科学専攻</span></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <table class="skills">
+      <tr><th>言語</th><td>JavaScript、TypeScript、Python</td></tr>
+      <tr><th>フロントエンド</th><td>React</td></tr>
+      <tr><th>バックエンド</th><td>Node.js(Express)、MongoDB</td></tr>
+      <tr><th>インフラ</th><td>Linux(Ubuntu)、nginx、PM2</td></tr>
+      <tr><th>自然言語処理</th><td>PyTorch、Hugging Face Transformers</td></tr>
+    </table>
+  </section>
+
+  <section id="works">
+    <h2>Works</h2>
+    <article class="card">
+      <div class="thumb">スクリーンショット</div>
+      <div>
+        <h3><a href="https://tcgsim.net/" target="_blank" rel="noopener">TCGSim</a></h3>
+        <p class="desc">ブラウザで使えるトレーディングカードゲームのシミュレーター。カードと盤面をユーザーが定義でき、特定のゲームに依存しない。一人回し、オンライン対戦、リプレイに対応。</p>
+        <p class="meta">個人開発 / 2025.03 – 公開・運用中</p>
+        <ul class="tags">
+          <li>React</li><li>Node.js</li><li>MongoDB</li><li>nginx</li>
+        </ul>
+        <div class="actions">
+          <a href="tcgsim.html">詳細</a>
+          <a href="https://tcgsim.net/" target="_blank" rel="noopener">サイト ↗</a>
+          <span>ソースコード非公開</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <ul class="research">
+      <li>
+        <span><b>多言語の語彙ギャップの検出</b><br>ある言語に1語で対応する語がない概念を、言語モデルの埋め込み表現から検出する手法を、日本語・中国語・スペイン語で検証。</span>
+      </li>
+      <li>
+        <span><b>文字単位でのmeaning-frequency lawの検証</b><br>日本語・中国語の文字について、出現頻度と意味の多様性の関係を、BERTの文脈埋め込みを用いて分析。</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>© 2026 【氏名】</footer>
+
+</body>
+</html>

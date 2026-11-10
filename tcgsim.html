@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCGSim | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="./">Portfolio</a>
+    <ul>
+      <li><a href="./#about">About</a></li>
+      <li><a href="./#skills">Skills</a></li>
+      <li><a href="./#works">Works</a></li>
+      <li><a href="./#research">Research</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="detail">
+
+  <a class="back" href="./#works">← Works</a>
+  <h1>TCGSim</h1>
+  <p class="lead">ブラウザで使えるトレーディングカードゲームのシミュレーター</p>
+
+  <div class="thumb shot">スクリーンショット</div>
+
+  <table class="facts">
+    <tr><th>URL</th><td><a href="https://tcgsim.net/" target="_blank" rel="noopener">https://tcgsim.net/</a>(機能の利用にはアカウント登録が必要)</td></tr>
+    <tr><th>期間</th><td>2025.03 – 現在</td></tr>
+    <tr><th>開発体制</th><td>個人</td></tr>
+    <tr><th>使用技術</th><td>React、Redux Toolkit、Node.js(Express)、Socket.IO、MongoDB、Firebase Authentication、Stripe、nginx、PM2、Jest、Playwright、GitHub Actions</td></tr>
+    <tr><th>ソースコード</th><td>非公開</td></tr>
+  </table>
+
+  <section>
+    <h2>作った理由</h2>
+    <p>カードゲームの調整(大会に向けた練習や検証)に使うためです。既存のデジタルゲームはルールどおりの操作しかできず、巻き戻しもできません。対面では自由に操作できますが、過去の盤面を再現できません。</p>
+    <p>TCGSimでは、操作をすべて手動で行えるようにし、操作の記録から巻き戻しや分岐ができるようにしました。</p>
+  </section>
+
+  <section>
+    <h2>主な機能</h2>
+    <ul>
+      <li>一人回し</li>
+      <li>オンライン対戦(ルームを作成し、盤面をリアルタイムに同期)</li>
+      <li>リプレイ、観戦、途中の盤面からの分岐</li>
+      <li>盤面のゾーン配置の編集</li>
+      <li>デッキ・カードの作成と管理</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>実装</h2>
+    <ul>
+      <li>
+        <b>状態の更新処理の集約</b>
+        <span>カードの移動やドローなどの操作はReducerで処理し、一人回しとオンライン対戦で共通化。</span>
+      </li>
+      <li>
+        <b>巻き戻しと分岐</b>
+        <span>操作ログと盤面のスナップショットを保存し、過去の盤面への巻き戻し、分岐、リプレイに利用。</span>
+      </li>
+      <li>
+        <b>オンライン対戦の同期</b>
+        <span>各プレイヤーの操作をサーバで処理し、更新後の状態を全員に配信。</span>
+      </li>
+      <li>
+        <b>インフラ</b>
+        <span>VPS(Ubuntu)上でnginxをリバースプロキシに、PM2でプロセスを管理。HTTPS化済み。E2Eテストとテスト環境へのデプロイはGitHub Actionsで自動化。</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>苦労した点</h2>
+    <p>開発を始めた時点では設計の知識が足りず、機能の追加や共通処理の切り出しのたびに、関係のない箇所で不具合が出ていました。責務の分離とモジュール化を意識して、構成を少しずつ見直しました。</p>
+  </section>
+
+</main>
+
+<footer>© 2026 【氏名】</footer>
+
+</body>
+</html>
